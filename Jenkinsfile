@@ -1,8 +1,11 @@
 pipeline {
   //agent { label 'linux' }
   agent any
+  tools {
+    maven 'maven-3' 
+  }  
   options {
-    buildDiscarder(logRotator(numToKeepStr: '5'))
+    buildDiscarder(logRotator(numToKeepStr: '2'))
   }
   environment {
     CI = true
